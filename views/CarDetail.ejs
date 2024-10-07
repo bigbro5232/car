@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자동차 정보 상세보기</h1>
+    <a href="/car">목록</a>
+    <a href="/car/modify?id=<%=car._id %>">수정</a>
+    <a href="/car/delete?id=<%=car._id %>">삭제</a>
+    <div>
+        <table>
+            <%rewardList.forEach((reward,rewardIdx)=>{ %>
+                <tr>
+                    <th>
+                        <%=car.carRewards.rewardIdx %>
+                    </th>
+                    <th>
+                        <%=car.carRewards.detail %>
+                    </th>
+                    <th><input type="submit" value="삭제"></th>
+                </tr>
+                <%})%>
+        </table>
+    </div>
+    <hr/>
+    <div>
+        <label>댓글 : </label>
+        <input type="text" name="detail">
+        <input type="submit" value="입력">
+    </div>
+</body>
+
+</html>

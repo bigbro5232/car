@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>자동차 정보 목록</h1>
+    <a href="/car/Input">입력하기</a>
+    <table border="1" width="100%">
+        <tr>
+            <th>NO</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>COMPANY</th>
+            <th>YEAR</th>
+        </tr>
+        <% 
+            carList.forEach((car,idx)=>{
+        %>
+        <tr>
+            <th><%=idx %></th>
+            <th><a href="/car/detail?id=<%=car._id %>"><%=car.name %></a></th>
+            <th><%=car.price %></th>
+            <th><%=car.company %></th>
+            <th><%=car.year %></th>
+        </tr>
+        <% 
+            });
+        %>
+    </table>
+</body>
+
+</html>
